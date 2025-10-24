@@ -1,5 +1,9 @@
 -- silver Table DATA insert
 
+CREATE OR ALTER Procedure Silver_Insert AS
+
+BEGIN
+
 PRINT 'Siver Table Data Insert : silver.crm_cust_info'
 TRUNCATE TABLE  silver.crm_cust_info
 INSERT INTO  silver.crm_cust_info(
@@ -140,5 +144,7 @@ SELECT [ID]
       ,[MAINTENANCE]
   FROM [datawarehouse].[bronze].[erp_PX_CAT_G1V2]
 
+  END
+  
 
-
+  EXEC Silver_Insert
